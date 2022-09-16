@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const App = () => {
   const [currentBill, setCurrentBill] = useState(100);
-  const [currentTip, setCurrentTip] = useState(15);
+  const [currentTip, setCurrentTip] = useState(0);
 
   const [tipPrice, setTipPrice] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -13,15 +13,38 @@ const App = () => {
 
   const inputTipHandler = (ev) => {
     setTipPrice(ev.target.value);
+    setTotalPrice(
+      (parseFloat(currentBill) + parseFloat(currentTip)).toFixed(2)
+    );
   };
 
   const inputSplitHandler = (ev) => {
     setCurrentSplit(ev.target.value);
   };
+  const roundValueUp = () => {
+    setTotalSplit(Math.ceil(totalSplit));
+    setTotalPrice(Math.ceil(totalPrice));
+  };
+  const roundValueDown = () => {
+    setTotalSplit(Math.floor(totalSplit));
+    setTotalPrice(Math.floor(totalPrice));
+  };
 
   useEffect(() => {
-    setTotalPrice(currentBill + currentTip);
-  }, [currentBill, currentTip]);
+    setTotalPrice(currentBill);
+  }, [currentBill]);
+  useEffect(() => {
+    const curTip = ((tipPrice * currentBill) / 100).toFixed(2);
+    setCurrentTip(curTip);
+  }, [tipPrice, currentBill]);
+  useEffect(() => {
+    const curSplit = (tipPrice / currentSplit).toFixed(2);
+    if (isFinite(curSplit)) {
+      setTotalSplit(curSplit);
+    } else {
+      setTotalSplit(0);
+    }
+  }, [currentSplit, tipPrice]);
 
   return (
     <div className="App">
@@ -29,6 +52,15 @@ const App = () => {
       <div className="card">
         <div className="line">
           <span>Bill</span>
+          <input
+            type="number"
+            min="1"
+            placeholder="Enter your bill value"
+            className="input-bill"
+            onChange={(ev) => {
+              setCurrentBill(ev.target.value);
+            }}
+          />
           <span className="line-price">R{currentBill}</span>
         </div>
         <div className="line">
@@ -49,7 +81,7 @@ const App = () => {
         <div className="input-line">
           <input
             type="range"
-            min="1"
+            min="0"
             max="100"
             step="1"
             value={tipPrice}
@@ -79,8 +111,8 @@ const App = () => {
       <div className="card">
         <span>Rounding amount</span>
         <div className="card-buttons">
-          <button>Up</button>
-          <button>Down</button>
+          <button onClick={roundValueUp}>Up</button>
+          <button onClick={roundValueDown}>Down</button>
         </div>
       </div>
     </div>
