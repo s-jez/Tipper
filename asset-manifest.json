@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Tipper/static/css/main.14599845.css",
+    "main.js": "/Tipper/static/js/main.6deacddd.js",
+    "index.html": "/Tipper/index.html",
+    "main.14599845.css.map": "/Tipper/static/css/main.14599845.css.map",
+    "main.6deacddd.js.map": "/Tipper/static/js/main.6deacddd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.14599845.css",
+    "static/js/main.6deacddd.js"
+  ]
+}
