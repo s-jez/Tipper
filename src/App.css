@@ -1,0 +1,67 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1400px;
+}
+h1 {
+  margin: 2.5rem 0;
+}
+.card {
+  width: 50%;
+  background-color: #fff;
+  margin: 1rem 0;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 .5rem 1.25rem rgba(0, 0, 0, .3);
+}
+.line {
+  display: flex;
+  justify-content: space-between;
+  margin: .5rem 0;
+}
+.total-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.total-price {
+  font-size: 1.6rem;
+  color: rgb(31, 135, 253);
+  font-weight: 500;
+}
+.line-price {
+  font-size: 1.1rem;
+  color: rgb(31, 135, 253);
+  font-weight: 400;
+}
+.input-line input {
+  width: 100%;
+  margin: .5rem 0;
+}
+.card-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.card-buttons button {
+  width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  border: 0;
+  margin: 1rem .25rem;
+  cursor: pointer;
+  transition: all .3s;
+  color: #fff;
+  background-color: rgb(31, 135, 253);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+.card-buttons button:hover {
+  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .30);
+
+}
+@media (max-width: 768px) {
+  .card {
+    width: 80%;
+  }
+}
