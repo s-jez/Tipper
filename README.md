@@ -1,4 +1,5 @@
 # Tipper App
+## [Live Tipper - Github Pages](https://s-jez.github.io/Tipper/) <br />
 Purpose of Tipper is to calculate your tip!
 
 ![Tip calculator](https://i.imgur.com/koPMOGP.jpeg)
