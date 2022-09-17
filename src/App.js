@@ -17,7 +17,15 @@ const App = () => {
       (parseFloat(currentBill) + parseFloat(currentTip)).toFixed(2)
     );
   };
-
+  const inputBillHandler = (ev) => {
+    if (isNaN(ev.target.value) || ev.target.value > 1000000) {
+      alert("Please enter correct bill value...");
+      setCurrentBill(0);
+      return;
+    } else {
+      setCurrentBill(ev.target.value);
+    }
+  };
   const inputSplitHandler = (ev) => {
     setCurrentSplit(ev.target.value);
   };
@@ -57,9 +65,8 @@ const App = () => {
             min="1"
             placeholder="Enter your bill value"
             className="input-bill"
-            onChange={(ev) => {
-              setCurrentBill(ev.target.value);
-            }}
+            onChange={inputBillHandler}
+            value={currentBill}
           />
           <span className="line-price">R{currentBill}</span>
         </div>
