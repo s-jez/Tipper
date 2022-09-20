@@ -19,7 +19,6 @@ const App = () => {
   };
   const inputBillHandler = (ev) => {
     if (isNaN(ev.target.value) || ev.target.value > 1000000) {
-      alert("Please enter correct bill value...");
       setCurrentBill(0);
       return;
     } else {
