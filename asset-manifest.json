@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Tipper/static/css/main.0cc0fae9.css",
-    "main.js": "/Tipper/static/js/main.6a21852d.js",
+    "main.js": "/Tipper/static/js/main.da8d48e6.js",
     "index.html": "/Tipper/index.html",
     "main.0cc0fae9.css.map": "/Tipper/static/css/main.0cc0fae9.css.map",
-    "main.6a21852d.js.map": "/Tipper/static/js/main.6a21852d.js.map"
+    "main.da8d48e6.js.map": "/Tipper/static/js/main.da8d48e6.js.map"
   },
   "entrypoints": [
     "static/css/main.0cc0fae9.css",
-    "static/js/main.6a21852d.js"
+    "static/js/main.da8d48e6.js"
   ]
 }
